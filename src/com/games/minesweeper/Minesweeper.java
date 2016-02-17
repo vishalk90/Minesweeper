@@ -24,7 +24,9 @@ public class Minesweeper {
 		 * disp[i][j] = '0'; } }
 		 */
 
-		for (int i = 1; i <= (x); i++) {
+		// live problem display
+		
+		/*for (int i = 1; i <= (x); i++) {
 			for (int j = 1; j <= (y); j++) {
 				if (bomb[i][j])
 					System.out.print("@ ");
@@ -33,8 +35,11 @@ public class Minesweeper {
 			}
 			System.out.println();
 
-		}
+		}*/
+		
+		
 		int sol[][] = new int[x + 2][y + 2];
+		
 		for (int i = 1; i <= (x); i++) {
 			for (int j = 1; j <= (y); j++) {
 				if (bomb[i][j])
@@ -48,27 +53,9 @@ public class Minesweeper {
 			}
 
 		}
-		System.out.println();
-		System.out.println("Solution Matrix");
-		for (int i = 1; i <= (x + 1); i++) {
-			for (int j = 1; j <= (y + 1); j++) {
-				if (bomb[i][j])
-					System.out.print("@ ");
-				else if (j > y && i != j)
-					System.out.print(" :" + i);
-				else if (i > x && i != j)
-					System.out.print(j + " ");
-				else if (i > x && j > y && i == j)
-					System.out.println(" ");
-				else if (sol[i][j] == 0) {
-					System.out.print(". ");
-				} else
-					System.out.print(sol[i][j] + " ");
+		
+		
 
-			}
-			System.out.println();
-
-		}
 		// displaying sol[][]
 		// for (int i = 1; i < sol.length-1; i++) {
 		// for (int j = 1; j < sol.length-1; j++) {
@@ -83,6 +70,27 @@ public class Minesweeper {
 		boolean flag = true;
 
 		int disp[][] = new int[x + 2][y + 2];
+		
+		
+		
+		for (int i1 = 1; i1 <= x+1; i1++) {
+			for (int j1 = 1; j1 <= y+1; j1++) {
+				
+				if (j1 > y && i1 != j1)
+					System.out.print(" :" + i1);
+				else if (i1 > x && i1 != j1)
+					System.out.print(j1 + " ");
+				else if (i1 > x && j1 > y && i1 == j1)
+					System.out.println(" ");
+				 else System.out.print("■ ");
+			}
+			System.out.println();
+		}
+		
+		
+		
+
+		
 		while (flag) {
 			int xx = 0;
 			int yy = 0;
@@ -157,8 +165,8 @@ public class Minesweeper {
 			// displaying disp[][]
 			System.out.println("OUTPUT:");
 
-			for (int i1 = 1; i1 < x+1; i1++) {
-				for (int j1 = 1; j1 < y+1; j1++) {
+			for (int i1 = 1; i1 <= x+1; i1++) {
+				for (int j1 = 1; j1 <= y+1; j1++) {
 					
 					if (j1 > y && i1 != j1)
 						System.out.print(" :" + i1);
@@ -173,18 +181,44 @@ public class Minesweeper {
 					else if (disp[i1][j1] >0)
 						System.out.print(disp[i1][j1] + " ");
 					else if (disp[i1][j1]== -2)
-						System.out.print("[]");
-					else System.out.print("." + " ");
+						System.out.print("□ ");
+					else System.out.print("■ ");
 				}
 				System.out.println();
+			}
+			System.out.println("--------------------------------");
+
+		}
+		
+		System.out.println("///////////GAME OVER///////////");
+		// -----------
+		System.out.println("--------------------------------");
+		
+		System.out.println();
+		System.out.println("Solution Matrix");
+		System.out.println();
+		for (int i = 1; i <= (x + 1); i++) {
+			for (int j = 1; j <= (y + 1); j++) {
+				if (bomb[i][j])
+					System.out.print("@ ");
+				else if (j > y && i != j)
+					System.out.print(" :" + i);
+				else if (i > x && i != j)
+					System.out.print(j + " ");
+				else if (i > x && j > y && i == j)
+					System.out.println(" ");
+				else if (sol[i][j] == 0) {
+					System.out.print(". ");
+				} else
+					System.out.print(sol[i][j] + " ");
+
 			}
 			System.out.println();
 
 		}
 		
-		System.out.println("GAME OVER!!!");
-		// -----------
 
 	}
 
 }
+
