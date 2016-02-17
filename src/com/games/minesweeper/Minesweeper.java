@@ -72,13 +72,15 @@ public class Minesweeper {
 			System.out.println();
 		}
  		
- 		/*
+ 		// user interaction logic for game play 
+ 		
  		boolean flag = true;
  		int xx;
  		int yy;
- 	 	int disp[][] = new int[x+2][y+2];
+ 	 	int disp[][] = new int[x][y];
  		while(flag)
  		{
+ 			
  			// getting x and y coordinates from user
  	 		Scanner in = new Scanner(System.in);
  	 		System.out.println("Enter the block's X co-ordinate ");
@@ -96,19 +98,35 @@ public class Minesweeper {
  	 				int j = yy+1;
  	 				while(j<11)
  	 				{
- 	 					if(sol[i][j]=='@')
+ 	 					if(bomb[i+1][j+1])
  	 					{
- 	 						
+ 	 						disp[i][j] = -1;
+ 	 						break stop;
+ 	 					}
+ 	 					else if(sol[i+1][j+1]>0)
+ 	 					{
+ 	 						disp[i][j] = sol[i][j];
+ 	 						break stop;
  	 					}
  	 				}
  	 			}
  	 		}
  	 		
+ 	 		// displaying disp[][]
+ 	 		for (int i = 0; i < disp.length; i++) {
+ 				for (int j = 0; j < disp.length; j++) {
+ 					if (disp[i][j]<0)System.out.print("@"+ " " );
+ 					else System.out.print(disp[i][j] + " " );
+ 				}
+ 				System.out.println();
+ 			}
+ 	 		
+ 	 		//flag = false;
  		}
  	
  		
  		
- 		*/
+ 		//-----------
  		
  		
 	}
