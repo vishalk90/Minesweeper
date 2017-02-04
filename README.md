@@ -1,5 +1,5 @@
 # Minesweeper
-minesweeper game generator
+Minesweeper game generator
 
 Version 1.0
 -----------
