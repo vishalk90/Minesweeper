@@ -1,4 +1,4 @@
-# minesweeper
+# Minesweeper
 minesweeper game generator
 
 Version 1.0
