@@ -17,4 +17,4 @@ Version 1.2
 
 Most stable version with all feature working properly.
 
-+ You will get a message after winning the game
++ You will get a message after winning the game.
